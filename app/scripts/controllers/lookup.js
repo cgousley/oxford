@@ -9,7 +9,7 @@
  */
 angular.module('oxfordApp')
   .controller('LookupCtrl', ['$scope', 'lookupService', 'LookupClass', 'HistoryLogClass', function ($scope, lookupService, LookupClass, HistoryLogClass) {
-      $scope.wordList = 'ace,aceasdasd';
+      $scope.wordList = '';
       $scope.lookupWordList = function(wordList){
           lookupService.lookupWordList(wordList).then(function(res){
               $scope.responses = res;

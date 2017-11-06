@@ -12,12 +12,11 @@ Run the following:
 `npm install -g bower`
 `bower update`
 
-
+If you get an access or EACCESS error, refer to http://www.hongkiat.com/blog/grunt-command-not-found/
 
 ## Build & development
 Run `grunt` for building and `grunt serve` for preview.
 
-If you get an access or EACCESS error, refer to http://www.hongkiat.com/blog/grunt-command-not-found/
 
 ## Testing
 Running `grunt test` will run the unit tests with karma.
