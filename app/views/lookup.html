@@ -1,0 +1,28 @@
+<p>This is the lookup view.</p>
+
+
+<div ng-app="oxfordApp">
+    <form name="wordListForm">
+        <label for="wordList">List Words to lookup (comma separated)</label>
+        <textarea ng-model="wordList" name="wordList" id="wordList" cols="20" rows="10">
+        </textarea>
+        <button ng-click="lookupWordList(wordList)" type="button">Submit</button>
+        <div class="lookupLists" ng-show='responses.failed.length > 0 || responses.success.length > 0'>
+            <div class="lookupLists__list lookupLists__status--success">
+                <h1 class="lookupLists__status-text">Successful Responses: {{responses.success.length}}</h1>
+                <div ng-repeat="word in responses.success">
+                    <lookup-found>
+                    </lookup-found> 
+                </div>
+            </div>
+            <div class="lookupLists__list lookupLists__status--fail">
+                <h1 class="lookupLists__status-text">Failed Responses: {{responses.failed.length}}</h1>
+                <div ng-repeat="word in responses.failed">
+                    <lookup-not-found>
+                    </lookup-not-found>
+                </div>
+            </div>
+        
+        </div>
+    </form>
+</div>

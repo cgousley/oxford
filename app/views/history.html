@@ -1,0 +1,29 @@
+<p>This is the history view.</p>
+
+
+<div ng-app="oxfordApp">
+
+<!--{{history}}-->
+    
+    <div ng-switch="(history.length > 0)">
+        
+        <div ng-switch-when="true">
+            <div class="submissionList--item" ng-repeat="submission in history">
+                <h1>DATE: {{submission.date | date}}</h1>
+                <div class="historyLists" ng-show='submission.submissions.failed.length > 0 || submission.submissions.success.length > 0'>
+                        <history-found></history-found> 
+                        <history-not-found></history-not-found>
+                </div>
+            </div>
+        </div>
+        <div ng-switch-when="false">
+            <h1>History is Empty.</h1>
+        </div>
+        
+        
+    </div>
+    
+    
+    
+
+</div>
